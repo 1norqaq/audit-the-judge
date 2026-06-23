@@ -1,0 +1,19 @@
+# environments / tooling (not part of the deliverable)
+opencompass/
+../opencompass/
+*.egg-info/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# secrets
+.env
+
+# generated artifacts (regenerable via scripts/run_audit.sh)
+outputs/
+data/pairs*.jsonl
+data/answers.jsonl
+
+# OS
+.DS_Store

@@ -1,0 +1,334 @@
+{"id": "kn01", "task": "knowledge", "question": "What causes the seasons on Earth?"}
+{"id": "kn02", "task": "knowledge", "question": "Why is the sky blue during the day and red at sunset?"}
+{"id": "kn03", "task": "knowledge", "question": "What is the difference between weather and climate?"}
+{"id": "kn04", "task": "knowledge", "question": "How do vaccines train the immune system?"}
+{"id": "kn05", "task": "knowledge", "question": "What is compound interest and why does it matter for saving?"}
+{"id": "kn06", "task": "knowledge", "question": "How does a refrigerator keep food cold?"}
+{"id": "kn07", "task": "knowledge", "question": "What is the greenhouse effect?"}
+{"id": "kn08", "task": "knowledge", "question": "Why do we have time zones?"}
+{"id": "rs01", "task": "reasoning", "question": "A bat and a ball cost $1.10 together. The bat costs $1.00 more than the ball. How much is the ball?"}
+{"id": "rs02", "task": "reasoning", "question": "If all bloops are razzies and all razzies are lazzies, are all bloops definitely lazzies? Explain."}
+{"id": "rs03", "task": "reasoning", "question": "You have a 3-liter jug and a 5-liter jug. How do you measure exactly 4 liters?"}
+{"id": "rs04", "task": "reasoning", "question": "Five machines make five widgets in five minutes. How long for 100 machines to make 100 widgets?"}
+{"id": "rs05", "task": "reasoning", "question": "Is it better to make a decision quickly with little information or slowly with more? Discuss the tradeoff."}
+{"id": "rs06", "task": "reasoning", "question": "A snail climbs 3 feet up a well each day and slips 2 feet each night. The well is 10 feet deep. How many days to escape?"}
+{"id": "rs07", "task": "reasoning", "question": "Why can correlation between two variables fail to imply causation? Give an example."}
+{"id": "rs08", "task": "reasoning", "question": "If a test is 99% accurate and a disease affects 1 in 1000 people, why might a positive result still likely be a false alarm?"}
+{"id": "wr01", "task": "writing", "question": "Write a short, encouraging note to a friend who just failed a driving test."}
+{"id": "wr02", "task": "writing", "question": "Draft a two-sentence product description for a reusable water bottle."}
+{"id": "wr03", "task": "writing", "question": "Write a haiku about a city waking up in the morning."}
+{"id": "wr04", "task": "writing", "question": "Rewrite this to be more polite: 'Send me the report now.'"}
+{"id": "wr05", "task": "writing", "question": "Write a one-paragraph summary of why reading fiction can build empathy."}
+{"id": "wr06", "task": "writing", "question": "Compose a brief apology email for missing a meeting due to a scheduling mix-up."}
+{"id": "wr07", "task": "writing", "question": "Write an opening line for a mystery novel set on a train."}
+{"id": "wr08", "task": "writing", "question": "Explain photosynthesis to a curious eight-year-old in a few sentences."}
+{"id": "cd01", "task": "coding", "question": "Write a Python function that returns the nth Fibonacci number."}
+{"id": "cd02", "task": "coding", "question": "How do you reverse a string in Python? Show the simplest way."}
+{"id": "cd03", "task": "coding", "question": "Write a function to check whether a string is a palindrome, ignoring case and spaces."}
+{"id": "cd04", "task": "coding", "question": "Explain the difference between a list and a tuple in Python."}
+{"id": "cd05", "task": "coding", "question": "Write a SQL query to find the second-highest salary in an employees table."}
+{"id": "cd06", "task": "coding", "question": "What is a race condition, and give one way to prevent it?"}
+{"id": "cd07", "task": "coding", "question": "Write a Python one-liner to count word frequencies in a sentence."}
+{"id": "cd08", "task": "coding", "question": "Explain what a hash map is and why lookups are fast."}
+{"id": "ad01", "task": "advice", "question": "What are practical tips for getting better sleep?"}
+{"id": "ad02", "task": "advice", "question": "How can a beginner start running without getting injured?"}
+{"id": "ad03", "task": "advice", "question": "How do you give constructive feedback to a coworker?"}
+{"id": "ad04", "task": "advice", "question": "What is a sensible way to start an emergency fund on a tight budget?"}
+{"id": "ad05", "task": "advice", "question": "How can someone overcome procrastination on a big project?"}
+{"id": "ad06", "task": "advice", "question": "What should you consider before adopting a dog?"}
+{"id": "ad07", "task": "advice", "question": "How do you politely decline an invitation without offending anyone?"}
+{"id": "ad08", "task": "advice", "question": "What are good habits for staying focused while working from home?"}
+{"id": "kn901", "task": "knowledge", "question": "Why does ice float on water?"}
+{"id": "kn902", "task": "knowledge", "question": "What is the greenhouse effect and how does it warm the Earth?"}
+{"id": "kn903", "task": "knowledge", "question": "Explain why the sky appears blue during the day."}
+{"id": "kn904", "task": "knowledge", "question": "What causes a rainbow to form?"}
+{"id": "kn905", "task": "knowledge", "question": "How does a microwave oven heat food?"}
+{"id": "kn906", "task": "knowledge", "question": "Why do we have seasons?"}
+{"id": "kn907", "task": "knowledge", "question": "What is the difference between a virus and a bacterium?"}
+{"id": "kn908", "task": "knowledge", "question": "Explain how a solar eclipse occurs."}
+{"id": "kn909", "task": "knowledge", "question": "What is DNA and what is its primary function?"}
+{"id": "kn910", "task": "knowledge", "question": "Why does a balloon filled with helium float upward?"}
+{"id": "kn911", "task": "knowledge", "question": "How do vaccines work to protect against disease?"}
+{"id": "kn912", "task": "knowledge", "question": "What is the principle behind a lever?"}
+{"id": "kn913", "task": "knowledge", "question": "Explain why sound travels faster in water than in air."}
+{"id": "kn914", "task": "knowledge", "question": "What causes thunder during a storm?"}
+{"id": "kn915", "task": "knowledge", "question": "How does a compass work?"}
+{"id": "kn916", "task": "knowledge", "question": "What is the purpose of the ozone layer?"}
+{"id": "kn917", "task": "knowledge", "question": "Why do we see lightning before we hear thunder?"}
+{"id": "kn918", "task": "knowledge", "question": "Explain the concept of surface tension using a water strider as an example."}
+{"id": "kn919", "task": "knowledge", "question": "What is a black hole in simple terms?"}
+{"id": "kn920", "task": "knowledge", "question": "How does photosynthesis convert sunlight into energy for plants?"}
+{"id": "kn921", "task": "knowledge", "question": "Why does a metal spoon feel colder than a wooden spoon at the same temperature?"}
+{"id": "kn922", "task": "knowledge", "question": "What is the function of red blood cells in the human body?"}
+{"id": "kn923", "task": "knowledge", "question": "Explain why a heavy ship can float while a small pebble sinks."}
+{"id": "kn924", "task": "knowledge", "question": "What is inflation in economics?"}
+{"id": "kn925", "task": "knowledge", "question": "How does supply and demand affect prices?"}
+{"id": "kn926", "task": "knowledge", "question": "What is opportunity cost? Give an everyday example."}
+{"id": "kn927", "task": "knowledge", "question": "Explain the concept of compound interest."}
+{"id": "kn928", "task": "knowledge", "question": "What is GDP and what does it measure?"}
+{"id": "kn929", "task": "knowledge", "question": "Why do prices often rise when a country prints more money?"}
+{"id": "kn930", "task": "knowledge", "question": "What is the law of diminishing returns in simple terms?"}
+{"id": "kn931", "task": "knowledge", "question": "How does a stock market work at a basic level?"}
+{"id": "kn932", "task": "knowledge", "question": "What is the difference between a need and a want in economics?"}
+{"id": "kn933", "task": "knowledge", "question": "Explain why rent control can lead to housing shortages."}
+{"id": "kn934", "task": "knowledge", "question": "What is a tariff and why might a government impose one?"}
+{"id": "kn935", "task": "knowledge", "question": "What caused the Great Depression?"}
+{"id": "kn936", "task": "knowledge", "question": "Explain the concept of division of labor and its benefits."}
+{"id": "kn937", "task": "knowledge", "question": "Why do countries trade with each other?"}
+{"id": "kn938", "task": "knowledge", "question": "What is the function of a central bank?"}
+{"id": "kn939", "task": "knowledge", "question": "How does insurance spread risk among many people?"}
+{"id": "kn940", "task": "knowledge", "question": "What was the Industrial Revolution?"}
+{"id": "kn941", "task": "knowledge", "question": "Why did the Roman Empire fall?"}
+{"id": "kn942", "task": "knowledge", "question": "What was the significance of the Magna Carta?"}
+{"id": "kn943", "task": "knowledge", "question": "Explain the basic idea of the Cold War."}
+{"id": "kn944", "task": "knowledge", "question": "What was the main cause of World War I?"}
+{"id": "kn945", "task": "knowledge", "question": "Who was Cleopatra and why is she famous?"}
+{"id": "kn946", "task": "knowledge", "question": "What is the Renaissance?"}
+{"id": "kn947", "task": "knowledge", "question": "Describe the purpose of the Berlin Wall."}
+{"id": "kn948", "task": "knowledge", "question": "What was the Enlightenment period?"}
+{"id": "kn949", "task": "knowledge", "question": "Explain the concept of manifest destiny in U.S. history."}
+{"id": "kn950", "task": "knowledge", "question": "Why is the discovery of penicillin considered a major breakthrough?"}
+{"id": "kn951", "task": "knowledge", "question": "What was the Silk Road and why was it important?"}
+{"id": "kn952", "task": "knowledge", "question": "What does 'correlation does not imply causation' mean?"}
+{"id": "kn953", "task": "knowledge", "question": "Explain the difference between a theory and a hypothesis in science."}
+{"id": "kn954", "task": "knowledge", "question": "What is the placebo effect?"}
+{"id": "kn955", "task": "knowledge", "question": "Why does a bicycle stay upright when moving?"}
+{"id": "kn956", "task": "knowledge", "question": "What is static electricity and how is it created?"}
+{"id": "kn957", "task": "knowledge", "question": "Why do our ears pop when flying or driving uphill?"}
+{"id": "kn958", "task": "knowledge", "question": "Explain how a telescope works to see distant objects."}
+{"id": "kn959", "task": "knowledge", "question": "What is the difference between renewable and nonrenewable energy?"}
+{"id": "kn960", "task": "knowledge", "question": "How does Wi-Fi transmit data wirelessly?"}
+{"id": "kn961", "task": "knowledge", "question": "What is the function of the appendix (even if its purpose is unclear)?"}
+{"id": "kn962", "task": "knowledge", "question": "Why do we dream? Give one common scientific theory."}
+{"id": "kn963", "task": "knowledge", "question": "What is the Doppler effect, and where might you experience it?"}
+{"id": "kn964", "task": "knowledge", "question": "Explain how a battery produces electricity."}
+{"id": "kn965", "task": "knowledge", "question": "How does a self-checkout scale know an item's weight?"}
+{"id": "rs901", "task": "reasoning", "question": "If you have a 3-gallon jug and a 5-gallon jug, how can you measure exactly 4 gallons of water?"}
+{"id": "rs902", "task": "reasoning", "question": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?"}
+{"id": "rs903", "task": "reasoning", "question": "You are in a room with three light switches, each controlling one of three light bulbs in another room. You can only go into the other room once. How can you determine which switch controls which bulb?"}
+{"id": "rs904", "task": "reasoning", "question": "A farmer has 17 sheep. All but 9 die. How many sheep does the farmer have left?"}
+{"id": "rs905", "task": "reasoning", "question": "If it takes 5 machines 5 minutes to make 5 widgets, how long would it take 100 machines to make 100 widgets?"}
+{"id": "rs906", "task": "reasoning", "question": "A doctor gives you three pills and tells you to take one every half hour. How long will the pills last?"}
+{"id": "rs907", "task": "reasoning", "question": "You have a 7-minute hourglass and an 11-minute hourglass. How can you measure exactly 15 minutes?"}
+{"id": "rs908", "task": "reasoning", "question": "I am an odd number. Take away a letter and I become even. What number am I?"}
+{"id": "rs909", "task": "reasoning", "question": "A man pushes his car to a hotel and tells the owner he is bankrupt. Why?"}
+{"id": "rs910", "task": "reasoning", "question": "What comes next in this sequence: 1, 11, 21, 1211, 111221?"}
+{"id": "rs911", "task": "reasoning", "question": "If a rooster lays an egg on top of a barn, which way will it roll?"}
+{"id": "rs912", "task": "reasoning", "question": "You have two ropes that each take exactly one hour to burn, but they burn unevenly. How can you measure 45 minutes?"}
+{"id": "rs913", "task": "reasoning", "question": "A woman has 7 children, half of them are boys. How is this possible?"}
+{"id": "rs914", "task": "reasoning", "question": "What number when spelled out has the same number of letters as its value?"}
+{"id": "rs915", "task": "reasoning", "question": "A plane crashes on the border of the US and Canada. Where do they bury the survivors?"}
+{"id": "rs916", "task": "reasoning", "question": "How many months have 28 days?"}
+{"id": "rs917", "task": "reasoning", "question": "If you have me, you want to share me. If you share me, you don't have me. What am I?"}
+{"id": "rs918", "task": "reasoning", "question": "A man looks at a portrait and says, 'Brothers and sisters I have none, but that man's father is my father's son.' Who is in the portrait?"}
+{"id": "rs919", "task": "reasoning", "question": "What is the smallest positive integer that is divisible by all numbers from 1 to 10?"}
+{"id": "rs920", "task": "reasoning", "question": "Three men split a hotel room costing $30. They each pay $10. Later the clerk realizes it's only $25 and sends $5 back with the bellboy. The bellboy gives each man $1 and keeps $2. So each man paid $9, total $27, plus $2 kept = $29. Where is the missing dollar?"}
+{"id": "rs921", "task": "reasoning", "question": "How many times can you subtract 5 from 25?"}
+{"id": "rs922", "task": "reasoning", "question": "What has keys but can't open locks?"}
+{"id": "rs923", "task": "reasoning", "question": "If you are in a race and you pass the person in second place, what place are you in?"}
+{"id": "rs924", "task": "reasoning", "question": "A snail climbs 3 feet up a wall each day and slips back 2 feet each night. How many days to reach the top of a 30-foot wall?"}
+{"id": "rs925", "task": "reasoning", "question": "What is the next letter in this sequence: O, T, T, F, F, S, S, E, ?"}
+{"id": "rs926", "task": "reasoning", "question": "You have a 3-liter bucket and a 5-liter bucket. How can you measure exactly 1 liter?"}
+{"id": "rs927", "task": "reasoning", "question": "A father and son are in a car accident. The father dies, the son is rushed to the hospital. The doctor says, 'I cannot operate on this boy, he is my son.' How is this possible?"}
+{"id": "rs928", "task": "reasoning", "question": "What is the highest number that can be written with three digits?"}
+{"id": "rs929", "task": "reasoning", "question": "A man living on the 20th floor takes the elevator to the 10th floor every day and walks the rest. Why?"}
+{"id": "rs930", "task": "reasoning", "question": "If a red house is made of red bricks, a blue house is made of blue bricks, what is a green house made of?"}
+{"id": "rs931", "task": "reasoning", "question": "You have a coin that is not fair; it lands heads 60% of the time. How can you simulate a fair coin flip using it?"}
+{"id": "rs932", "task": "reasoning", "question": "What is the missing number: 2, 6, 12, 20, 30, ?"}
+{"id": "rs933", "task": "reasoning", "question": "A train leaves New York for Chicago at the same time another train leaves Chicago for New York. One travels at 100 mph, the other at 120 mph. When they meet, which is closer to New York?"}
+{"id": "rs934", "task": "reasoning", "question": "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?"}
+{"id": "rs935", "task": "reasoning", "question": "How many sides does a circle have?"}
+{"id": "rs936", "task": "reasoning", "question": "If you divide 30 by half and add 10, what do you get?"}
+{"id": "rs937", "task": "reasoning", "question": "A clock shows 3:15. What is the angle between the hour and minute hands?"}
+{"id": "rs938", "task": "reasoning", "question": "You have a 5-liter jug and a 3-liter jug. How can you fill the 5-liter jug with exactly 4 liters?"}
+{"id": "rs939", "task": "reasoning", "question": "What is the only word that is spelled incorrectly in every dictionary?"}
+{"id": "rs940", "task": "reasoning", "question": "A man buys a horse for $60, sells it for $70, buys it back for $80, and sells it again for $90. How much profit did he make?"}
+{"id": "rs941", "task": "reasoning", "question": "How many eggs can you put in an empty basket?"}
+{"id": "rs942", "task": "reasoning", "question": "What is the next number: 1, 4, 9, 16, 25, ?"}
+{"id": "rs943", "task": "reasoning", "question": "If it is 3:00 now, what time was it 4 hours ago?"}
+{"id": "rs944", "task": "reasoning", "question": "You have a 10-liter bucket full of water and a 7-liter empty bucket. How can you measure exactly 2 liters?"}
+{"id": "rs945", "task": "reasoning", "question": "A word I know, six letters it contains. Remove one letter and twelve remains. What am I?"}
+{"id": "rs946", "task": "reasoning", "question": "How many times do the hands of a clock overlap in a day?"}
+{"id": "rs947", "task": "reasoning", "question": "A farmer has a fox, a chicken, and a bag of grain. He must cross a river with only one item at a time. The fox will eat the chicken, and the chicken will eat the grain if left alone. How does he get all across?"}
+{"id": "rs948", "task": "reasoning", "question": "What is the smallest number that increases by 12 when you reverse its digits?"}
+{"id": "rs949", "task": "reasoning", "question": "If you throw a red stone into the blue sea, what does it become?"}
+{"id": "rs950", "task": "reasoning", "question": "A man is 2 meters tall and wears size 12 shoes. What does he weigh?"}
+{"id": "rs951", "task": "reasoning", "question": "How many cats are in a room if there is a cat in every corner and each cat sees three other cats?"}
+{"id": "rs952", "task": "reasoning", "question": "What is the value of half of two plus two?"}
+{"id": "rs953", "task": "reasoning", "question": "A ladder hangs over the side of a ship with the bottom rung resting on the water. The rungs are 20 cm apart. The tide rises at 10 cm per hour. After 2 hours, how many rungs are covered?"}
+{"id": "rs954", "task": "reasoning", "question": "If you have a cube that is painted on all sides and cut into 27 smaller cubes, how many have no paint?"}
+{"id": "rs955", "task": "reasoning", "question": "What is the missing number in the sequence: 5, 10, 20, 40, ?"}
+{"id": "rs956", "task": "reasoning", "question": "A man is looking at a photograph. Someone asks him, 'Who is it?' He replies, 'Brothers and sisters I have none, but that man's mother is my daughter's mother-in-law.' Who is in the photo?"}
+{"id": "rs957", "task": "reasoning", "question": "If a chicken and a half lays an egg and a half in a day and a half, how many eggs does one chicken lay in one day?"}
+{"id": "rs958", "task": "reasoning", "question": "What is the next letter: A, E, F, H, I, K, L, M, ?"}
+{"id": "rs959", "task": "reasoning", "question": "You have three boxes: one contains only apples, one only oranges, and one both. All labels are wrong. You can pick one fruit from one box. How can you correctly label all boxes?"}
+{"id": "rs960", "task": "reasoning", "question": "What is the largest number you can get by moving only two matches in the Roman numeral XII?"}
+{"id": "rs961", "task": "reasoning", "question": "A bat and ball cost $1.10. If the bat costs $1 more than the ball, how much does the ball cost? (Trick version: answer $0.05, but many say $0.10)"}
+{"id": "rs962", "task": "reasoning", "question": "How many sides does a strip of Mobius have?"}
+{"id": "rs963", "task": "reasoning", "question": "If you are standing on a floor that is made of mirrors, and you look up, what do you see?"}
+{"id": "rs964", "task": "reasoning", "question": "What is the smallest prime number that is also a palindrome?"}
+{"id": "rs965", "task": "reasoning", "question": "A man walks into a bar and asks for a glass of water. The bartender points a gun at him. The man says 'thank you' and leaves. Why?"}
+{"id": "rs966", "task": "reasoning", "question": "What is the next number: 2, 3, 5, 7, 11, 13, ?"}
+{"id": "rs967", "task": "reasoning", "question": "If a doctor gives you three pills and tells you to take one every half hour, how long will they last? (Answer: 1 hour, because you take first at time 0, second at 30 min, third at 60 min)"}
+{"id": "wr901", "task": "writing", "question": "Rewrite this sentence to express regret: 'I didn't study for the test.'"}
+{"id": "wr902", "task": "writing", "question": "Summarize the plot of a story about a lost dog finding its way home in two sentences."}
+{"id": "wr903", "task": "writing", "question": "Write a note to a neighbor apologizing for the loud party last night."}
+{"id": "wr904", "task": "writing", "question": "Describe a sunset using only five words."}
+{"id": "wr905", "task": "writing", "question": "Turn this command into a polite request: 'Give me the report.'"}
+{"id": "wr906", "task": "writing", "question": "In one sentence, explain why exercise is important."}
+{"id": "wr907", "task": "writing", "question": "Write a creative opening line for a fantasy novel set in a desert."}
+{"id": "wr908", "task": "writing", "question": "Rewrite this in formal language: 'The boss was super mad about the delay.'"}
+{"id": "wr909", "task": "writing", "question": "Summarize the water cycle in three sentences."}
+{"id": "wr910", "task": "writing", "question": "Write a short thank-you note for a surprise birthday party."}
+{"id": "wr911", "task": "writing", "question": "Describe the feeling of eating a sour lemon in one sentence."}
+{"id": "wr912", "task": "writing", "question": "Turn this declarative sentence into a question: 'She finished the project early.'"}
+{"id": "wr913", "task": "writing", "question": "Write a diary entry from the perspective of a tree in autumn."}
+{"id": "wr914", "task": "writing", "question": "In two sentences, explain how to make a peanut butter and jelly sandwich."}
+{"id": "wr915", "task": "writing", "question": "Rewrite this to remove passive voice: 'The cake was eaten by the children.'"}
+{"id": "wr916", "task": "writing", "question": "Create a haiku about a thunderstorm."}
+{"id": "wr917", "task": "writing", "question": "Write a brief instruction for someone using a library for the first time."}
+{"id": "wr918", "task": "writing", "question": "Summarize the benefits of reading books in one sentence."}
+{"id": "wr919", "task": "writing", "question": "Rewrite this sentence to show urgency: 'We should leave soon.'"}
+{"id": "wr920", "task": "writing", "question": "Write a short apology note for forgetting a friend's birthday."}
+{"id": "wr921", "task": "writing", "question": "Describe a dragon's personality in three words."}
+{"id": "wr922", "task": "writing", "question": "Turn this statement into a persuasive argument: 'Plastic straws are bad for the ocean.'"}
+{"id": "wr923", "task": "writing", "question": "In one sentence, define courage."}
+{"id": "wr924", "task": "writing", "question": "Write a creative prompt for a story about a clock that counts backward."}
+{"id": "wr925", "task": "writing", "question": "Rewrite this in simple language: 'The precipitation event resulted in flooding.'"}
+{"id": "wr926", "task": "writing", "question": "Summarize the plot of a mystery where the culprit is a parrot."}
+{"id": "wr927", "task": "writing", "question": "Write a note to a teammate encouraging them before a big game."}
+{"id": "wr928", "task": "writing", "question": "Describe the sound of rain on a tin roof in two sentences."}
+{"id": "wr929", "task": "writing", "question": "Rewrite this as a positive affirmation: 'I always mess things up.'"}
+{"id": "wr930", "task": "writing", "question": "Create a single line of dialogue for a villain revealing their plan."}
+{"id": "wr931", "task": "writing", "question": "In one sentence, explain what a metaphor is."}
+{"id": "wr932", "task": "writing", "question": "Write a short list of three things to pack for a hiking trip."}
+{"id": "wr933", "task": "writing", "question": "Turn this question into a statement: 'Is it raining?'"}
+{"id": "wr934", "task": "writing", "question": "Summarize the history of the internet in three sentences."}
+{"id": "wr935", "task": "writing", "question": "Rewrite this sentence to be more concise: 'Due to the fact that it was late, we decided to go home.'"}
+{"id": "wr936", "task": "writing", "question": "Write a creative ending for a story about two strangers on a train."}
+{"id": "wr937", "task": "writing", "question": "Describe the texture of sand between your fingers in one sentence."}
+{"id": "wr938", "task": "writing", "question": "Write a note to yourself about a goal you want to achieve this week."}
+{"id": "wr939", "task": "writing", "question": "Rewrite this in a humorous tone: 'I forgot my keys and got locked out.'"}
+{"id": "wr940", "task": "writing", "question": "Summarize the steps to solve a simple math problem (e.g., 5 + 3 x 2)."}
+{"id": "wr941", "task": "writing", "question": "Write a short riddle about a mirror."}
+{"id": "wr942", "task": "writing", "question": "Turn this passive observation into an active command: 'The door should be closed.'"}
+{"id": "wr943", "task": "writing", "question": "Describe a character who can only tell the truth in three sentences."}
+{"id": "wr944", "task": "writing", "question": "In one sentence, explain why people dream."}
+{"id": "wr945", "task": "writing", "question": "Rewrite this sentence to emphasize the time: 'We met at the park.'"}
+{"id": "wr946", "task": "writing", "question": "Write a brief public service announcement about recycling."}
+{"id": "wr947", "task": "writing", "question": "Summarize the moral of the tortoise and the hare in two sentences."}
+{"id": "wr948", "task": "writing", "question": "Write a note asking a coworker for help on a project."}
+{"id": "wr949", "task": "writing", "question": "Describe the smell of freshly baked bread in one sentence."}
+{"id": "wr950", "task": "writing", "question": "Rewrite this using an analogy: 'She was very fast.'"}
+{"id": "wr951", "task": "writing", "question": "Create a short horror story prompt involving a creaking floorboard."}
+{"id": "wr952", "task": "writing", "question": "Turn this fact into a question: 'The Amazon is the largest river by volume.'"}
+{"id": "wr953", "task": "writing", "question": "Summarize the process of photosynthesis in two sentences for a child."}
+{"id": "wr954", "task": "writing", "question": "Rewrite this sentence to sound more optimistic: 'I only got half the work done.'"}
+{"id": "wr955", "task": "writing", "question": "Write a list of three synonyms for 'said' with different emotional tones."}
+{"id": "wr956", "task": "writing", "question": "Describe the feeling of nostalgia in one sentence."}
+{"id": "wr957", "task": "writing", "question": "Write a short instruction for teaching someone how to tie a shoelace."}
+{"id": "wr958", "task": "writing", "question": "Summarize the law of gravity in one sentence."}
+{"id": "wr959", "task": "writing", "question": "Rewrite this as a threat: 'You might want to reconsider your decision.'"}
+{"id": "wr960", "task": "writing", "question": "Write a creative prompt for a story set in a library after midnight."}
+{"id": "wr961", "task": "writing", "question": "Describe a cloud's shape and movement in three words."}
+{"id": "wr962", "task": "writing", "question": "Turn this observation into a scientific hypothesis: 'Plants grow faster in sunlight.'"}
+{"id": "wr963", "task": "writing", "question": "Write a note to a restaurant thanking them for great service."}
+{"id": "wr964", "task": "writing", "question": "Summarize the plot of Cinderella in three sentences."}
+{"id": "wr965", "task": "writing", "question": "Rewrite this sentence to be more dramatic: 'He walked into the room.'"}
+{"id": "wr966", "task": "writing", "question": "In one sentence, explain what a palindrome is and give an example."}
+{"id": "wr967", "task": "writing", "question": "Write a short goodbye message for a colleague moving to another city."}
+{"id": "wr968", "task": "writing", "question": "Describe the taste of dark chocolate in two sentences."}
+{"id": "cd901", "task": "coding", "question": "Write a Python function that returns the sum of all even numbers in a list."}
+{"id": "cd902", "task": "coding", "question": "Explain the difference between `==` and `is` in Python."}
+{"id": "cd903", "task": "coding", "question": "Write a SQL query to select all columns from a table named 'users' where the age is greater than 18."}
+{"id": "cd904", "task": "coding", "question": "What does the `map` function do in JavaScript? Provide a simple example."}
+{"id": "cd905", "task": "coding", "question": "Write a Java method that takes two integers and returns their product."}
+{"id": "cd906", "task": "coding", "question": "Explain the concept of a primary key in SQL."}
+{"id": "cd907", "task": "coding", "question": "Write a Python one-liner using list comprehension to create a list of squares from 1 to 10."}
+{"id": "cd908", "task": "coding", "question": "What is the output of `console.log(typeof null)` in JavaScript?"}
+{"id": "cd909", "task": "coding", "question": "Write a SQL query to count the number of rows in a table called 'orders'."}
+{"id": "cd910", "task": "coding", "question": "Create a Python function that checks if a string is a palindrome."}
+{"id": "cd911", "task": "coding", "question": "What is the difference between `let` and `var` in JavaScript?"}
+{"id": "cd912", "task": "coding", "question": "Write a SQL query to find all unique cities from a 'customers' table."}
+{"id": "cd913", "task": "coding", "question": "Write a Python lambda that takes two numbers and returns the larger one."}
+{"id": "cd914", "task": "coding", "question": "Explain what a `foreach` loop does in C#."}
+{"id": "cd915", "task": "coding", "question": "Write a JavaScript function that reverses a string and returns it."}
+{"id": "cd916", "task": "coding", "question": "What is the purpose of the `git clone` command?"}
+{"id": "cd917", "task": "coding", "question": "Write a Python function using recursion to compute the factorial of n."}
+{"id": "cd918", "task": "coding", "question": "Write a SQL statement to add a new column 'email' to an existing 'users' table."}
+{"id": "cd919", "task": "coding", "question": "Explain in one sentence what CSS specificity is."}
+{"id": "cd920", "task": "coding", "question": "Write a JavaScript arrow function that takes an array and returns its length."}
+{"id": "cd921", "task": "coding", "question": "What does the `ORDER BY` clause do in SQL? Give a short example."}
+{"id": "cd922", "task": "coding", "question": "Write a Python function that removes all duplicates from a list."}
+{"id": "cd923", "task": "coding", "question": "How do you declare a constant in JavaScript?"}
+{"id": "cd924", "task": "coding", "question": "Write a SQL query to join two tables: 'orders' and 'customers' on customer_id."}
+{"id": "cd925", "task": "coding", "question": "Write a short Python decorator that prints 'Function called' before any function execution."}
+{"id": "cd926", "task": "coding", "question": "What is the difference between `null` and `undefined` in JavaScript?"}
+{"id": "cd927", "task": "coding", "question": "Write a SQL query to delete all records from a table named 'temp_data'."}
+{"id": "cd928", "task": "coding", "question": "Write a Python class named `Dog` with a method `bark` that prints 'Woof!'."}
+{"id": "cd929", "task": "coding", "question": "Explain the use of `git commit -m` in one sentence."}
+{"id": "cd930", "task": "coding", "question": "Write a JavaScript function that filters out all negative numbers from an array."}
+{"id": "cd931", "task": "coding", "question": "What does the `HAVING` clause do in SQL?"}
+{"id": "cd932", "task": "coding", "question": "Write a Python one-liner to read a file and return its lines as a list."}
+{"id": "cd933", "task": "coding", "question": "Write a Java method that checks if a number is even and returns a boolean."}
+{"id": "cd934", "task": "coding", "question": "Explain what an HTTP status code 404 means."}
+{"id": "cd935", "task": "coding", "question": "Write a SQL query to update the 'price' column to 19.99 for all products with 'sale' category."}
+{"id": "cd936", "task": "coding", "question": "Write a Python loop that iterates over a dictionary and prints each key and value."}
+{"id": "cd937", "task": "coding", "question": "What is the spread operator (`...`) in JavaScript? Provide an example."}
+{"id": "cd938", "task": "coding", "question": "Write a SQL query using `INNER JOIN` between 'students' and 'enrollments'."}
+{"id": "cd939", "task": "coding", "question": "Write a JavaScript function that returns the first element of an array."}
+{"id": "cd940", "task": "coding", "question": "Explain the concept of a foreign key in SQL."}
+{"id": "cd941", "task": "coding", "question": "Write a Python function that finds the maximum value in a list without using built-in max()."}
+{"id": "cd942", "task": "coding", "question": "What does `Array.prototype.push()` do in JavaScript?"}
+{"id": "cd943", "task": "coding", "question": "Write a SQL query to group orders by customer_id and count the number of orders per customer."}
+{"id": "cd944", "task": "coding", "question": "Write a short Python program using `try` and `except` to handle division by zero."}
+{"id": "cd945", "task": "coding", "question": "Explain the difference between `console.log`, `console.warn`, and `console.error` in JavaScript."}
+{"id": "cd946", "task": "coding", "question": "Write a SQL query to select the top 10 oldest users from a 'users' table (assume a 'birth_date' column)."}
+{"id": "cd947", "task": "coding", "question": "Write a Python function using `*args` to sum an arbitrary number of arguments."}
+{"id": "cd948", "task": "coding", "question": "What is a closure in JavaScript? Provide a one-sentence explanation."}
+{"id": "cd949", "task": "coding", "question": "Write a SQL statement to create a new table 'products' with columns id, name, and price."}
+{"id": "cd950", "task": "coding", "question": "Write a Python script that prints numbers from 1 to 100, but 'Fizz' for multiples of 3 and 'Buzz' for multiples of 5."}
+{"id": "cd951", "task": "coding", "question": "Explain the purpose of `node_modules` in a Node.js project."}
+{"id": "cd952", "task": "coding", "question": "Write a SQL query to find the average price from a 'products' table."}
+{"id": "cd953", "task": "coding", "question": "Write a JavaScript function that converts a string to uppercase and returns it."}
+{"id": "cd954", "task": "coding", "question": "What does the `LIMIT` clause do in SQL? Give an example."}
+{"id": "cd955", "task": "coding", "question": "Write a Python function that returns the length of a string without using `len()`."}
+{"id": "cd956", "task": "coding", "question": "Explain the concept of 'truthy' and 'falsy' values in JavaScript, with one example of each."}
+{"id": "cd957", "task": "coding", "question": "Write a SQL query to select all customers whose name starts with 'A'."}
+{"id": "cd958", "task": "coding", "question": "Write a Python function that merges two dictionaries into one."}
+{"id": "cd959", "task": "coding", "question": "What is a SQL injection attack? Describe it briefly in one sentence."}
+{"id": "cd960", "task": "coding", "question": "Write a JavaScript one-liner to create an array of numbers from 0 to 4."}
+{"id": "cd961", "task": "coding", "question": "Write a SQL query to add a unique constraint to the 'email' column in a 'users' table."}
+{"id": "cd962", "task": "coding", "question": "Write a Python function that checks if a number is prime."}
+{"id": "cd963", "task": "coding", "question": "Explain the difference between `break` and `continue` in loops."}
+{"id": "cd964", "task": "coding", "question": "Write a SQL query to find all orders that were placed in the last 7 days (assume an 'order_date' column)."}
+{"id": "cd965", "task": "coding", "question": "Write a JavaScript function that takes two arrays and returns their concatenation."}
+{"id": "cd966", "task": "coding", "question": "What is the output of `print(2 ** 3)` in Python? Explain briefly."}
+{"id": "cd967", "task": "coding", "question": "Write a SQL query using `LEFT JOIN` to show all customers and their orders (including customers with no orders)."}
+{"id": "cd968", "task": "coding", "question": "Write a Python function that flattens a list of lists into a single list."}
+{"id": "ad901", "task": "advice", "question": "How do I remove a red wine stain from a white cotton shirt?"}
+{"id": "ad902", "task": "advice", "question": "What is the best way to organize a cluttered refrigerator?"}
+{"id": "ad903", "task": "advice", "question": "How can I calm down before a stressful meeting in five minutes?"}
+{"id": "ad904", "task": "advice", "question": "What is an effective method to prevent mosquito bites during summer evenings?"}
+{"id": "ad905", "task": "advice", "question": "How do I safely clean a smartphone screen without damaging it?"}
+{"id": "ad906", "task": "advice", "question": "What is a simple technique to fall asleep faster when I'm wide awake?"}
+{"id": "ad907", "task": "advice", "question": "How can I remove permanent marker from a plastic surface?"}
+{"id": "ad908", "task": "advice", "question": "What is the best way to store fresh herbs so they last longer?"}
+{"id": "ad909", "task": "advice", "question": "How do I tie a reliable knot for securing a heavy box?"}
+{"id": "ad910", "task": "advice", "question": "What is a quick way to eliminate bad breath before a conversation?"}
+{"id": "ad911", "task": "advice", "question": "How can I keep my car windshield from fogging up in cold weather?"}
+{"id": "ad912", "task": "advice", "question": "What is an easy hack to measure a teaspoon without a measuring spoon?"}
+{"id": "ad913", "task": "advice", "question": "How do I properly wash and dry a wool sweater without shrinking it?"}
+{"id": "ad914", "task": "advice", "question": "What is the most efficient way to pack a suitcase for a week-long trip?"}
+{"id": "ad915", "task": "advice", "question": "How can I remove a stuck ring from a swollen finger safely?"}
+{"id": "ad916", "task": "advice", "question": "What is a good strategy for remembering someone's name after being introduced?"}
+{"id": "ad917", "task": "advice", "question": "How do I unclog a slow-draining sink without harsh chemicals?"}
+{"id": "ad918", "task": "advice", "question": "What is a simple method to sharpen dull scissors at home?"}
+{"id": "ad919", "task": "advice", "question": "How can I prevent my headphones from tangling when stored in a bag?"}
+{"id": "ad920", "task": "advice", "question": "What is the correct way to jump-start a car with jumper cables?"}
+{"id": "ad921", "task": "advice", "question": "How do I remove a bandage painlessly from skin?"}
+{"id": "ad922", "task": "advice", "question": "What is an effective technique to stop a small blister from hurting?"}
+{"id": "ad923", "task": "advice", "question": "How can I make a room smell fresh without using an air freshener?"}
+{"id": "ad924", "task": "advice", "question": "What is a good way to keep cut apples from turning brown in a lunchbox?"}
+{"id": "ad925", "task": "advice", "question": "How do I remove a stubborn price sticker from a glass jar?"}
+{"id": "ad926", "task": "advice", "question": "What is a quick fix when a zipper gets stuck on a jacket?"}
