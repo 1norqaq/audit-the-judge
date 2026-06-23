@@ -10,7 +10,7 @@
 
 ---
 
-Modern benchmarks increasingly **are** an LLM judge. We trust that judge to rank
+Modern benchmarks increasingly are an LLM judge. We trust that judge to rank
 answers — but who calibrates the judge? A judge that silently invents preferences where
 none exist, or quietly prefers whichever answer is shown first (or simply the longer
 one), corrupts every leaderboard built on top of it.
