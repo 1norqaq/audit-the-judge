@@ -38,7 +38,8 @@ judge's, not the data's.
 All five judges scored the **same 500-question comparison set** — 500 × 3 pair types × 2
 orders = **3,000 judge calls each**, 15,000 total. Questions were written by a neutral
 third party (Claude Opus 4.8); answer pairs by a fixed generator (DeepSeek V4). Full record
-+ per-task tables: [`docs/judge_comparison.md`](docs/judge_comparison.md).
++ per-task tables: [`docs/judge_comparison.md`](docs/judge_comparison.md); each judge's own
+single-judge report (all seven metrics + figures) is under [`docs/reports/`](docs/reports/).
 
 <p align="center"><img src="docs/figures_compare/comparison.png" width="100%"></p>
 
