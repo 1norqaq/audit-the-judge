@@ -14,6 +14,8 @@ venv/
 outputs/
 data/pairs*.jsonl
 data/answers.jsonl
+*.log
+*.bak
 
 # OS
 .DS_Store

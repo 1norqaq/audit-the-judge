@@ -11,6 +11,7 @@ a local vLLM server, etc. — selected purely by environment variables:
 from __future__ import annotations
 
 import os
+import re
 import time
 from dataclasses import dataclass
 
@@ -55,23 +56,50 @@ def chat(
     spec: ModelSpec,
     messages: list[dict],
     *,
-    temperature: float = 0.0,
+    temperature: float | None = 0.0,
     max_tokens: int = 1024,
+    token_param: str = "max_tokens",
+    extra_body: dict | None = None,
     retries: int = 4,
 ) -> str:
-    """One chat completion -> assistant text. Retries with backoff on transient errors."""
+    """One chat completion -> assistant text. Retries with backoff on transient errors.
+
+    Auto-adapts to provider parameter quirks that are self-described in the 400 error, so
+    the same call works across OpenAI-compatible endpoints without per-model config:
+      * reasoning models that reject `max_tokens`   -> resend as `max_completion_tokens`
+      * models that reject a custom temperature      -> drop it (use the model default)
+      * models that require `temperature == 1`        -> set it to 1
+    Adaptations retry immediately (no backoff) and are bounded so a persistent 400 still
+    surfaces. To skip the adaptation round-trip, set the correct `token_param` /
+    `temperature` up front (the registry does this per model). temperature=None omits it.
+    """
     client = _client(spec)
+    temp = temperature
     last = None
-    for attempt in range(retries):
+    adapt_budget = 3
+    attempt = 0
+    while attempt < retries:
+        kwargs: dict = {"model": spec.model, "messages": messages, token_param: max_tokens}
+        if temp is not None:
+            kwargs["temperature"] = temp
+        if extra_body:
+            kwargs["extra_body"] = extra_body
         try:
-            resp = client.chat.completions.create(
-                model=spec.model,
-                messages=messages,
-                temperature=temperature,
-                max_tokens=max_tokens,
-            )
+            resp = client.chat.completions.create(**kwargs)
             return (resp.choices[0].message.content or "").strip()
         except Exception as e:  # noqa: BLE001 - surface after retries
+            msg = str(e).lower()
+            if adapt_budget > 0:
+                if "max_completion_tokens" in msg and token_param == "max_tokens":
+                    token_param = "max_completion_tokens"; adapt_budget -= 1; continue
+                if "temperature" in msg and "deprecated" in msg and temp is not None:
+                    temp = None; adapt_budget -= 1; continue
+                if "temperature" in msg and ("only" in msg or "must be" in msg):
+                    # e.g. "only 0.6 is allowed" / "must be 1" — read the required value off the error
+                    m = re.search(r"(?:only|must be)\s+([0-9]*\.?[0-9]+)", msg)
+                    if m and temp != float(m.group(1)):
+                        temp = float(m.group(1)); adapt_budget -= 1; continue
             last = e
+            attempt += 1
             time.sleep(2 ** attempt)
     raise RuntimeError(f"chat() failed after {retries} attempts: {last}")

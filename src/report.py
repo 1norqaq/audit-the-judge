@@ -40,6 +40,20 @@ def discrimination_accuracy(verdicts: pd.DataFrame, *, B: int, seed: int) -> CI:
     return bootstrap_ci_over_pairs(nn, lambda d: float((d["winner"] == "ans1").mean()), B=B, seed=seed)
 
 
+def compute_metrics(verdicts: pd.DataFrame, *, B: int = 2000, seed: int = 0) -> dict:
+    """Run every control axis on one judge's verdict table and return the raw results.
+
+    Shared by the single-judge report (write_report + make_figures below) and the
+    multi-judge comparison (compare_report.py), so both read identical numbers.
+    """
+    neg = negative_control.analyze(verdicts, B=B, seed=seed)
+    pos = position_bias.analyze(verdicts, B=B, seed=seed)
+    vb = verbosity_bias.analyze(verdicts, B=B, seed=seed)
+    disc = discrimination_accuracy(verdicts, B=B, seed=seed)
+    fdr = fdr_table(neg["tests"] + pos["tests"] + vb["tests"])
+    return {"neg": neg, "pos": pos, "vb": vb, "disc": disc, "fdr": fdr, "has_verbose": vb["n_pairs"] > 0}
+
+
 def _bar_with_ci(ax, labels, cis, ref, ref_label, title, ylabel, color="#4C72B0"):
     xs = range(len(labels))
     pts = [c.point for c in cis]
@@ -159,12 +173,8 @@ def main():
     args = ap.parse_args()
 
     verdicts = load_verdicts(args.verdicts)
-    neg = negative_control.analyze(verdicts, B=args.B, seed=args.seed)
-    pos = position_bias.analyze(verdicts, B=args.B, seed=args.seed)
-    vb = verbosity_bias.analyze(verdicts, B=args.B, seed=args.seed)
-    disc = discrimination_accuracy(verdicts, B=args.B, seed=args.seed)
-    fdr = fdr_table(neg["tests"] + pos["tests"] + vb["tests"])
-    has_verbose = vb["n_pairs"] > 0
+    m = compute_metrics(verdicts, B=args.B, seed=args.seed)
+    neg, pos, vb, disc, fdr, has_verbose = m["neg"], m["pos"], m["vb"], m["disc"], m["fdr"], m["has_verbose"]
 
     fig_dir = args.outdir / "figures"
     make_figures(neg, pos, vb, fig_dir)

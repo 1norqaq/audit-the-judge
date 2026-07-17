@@ -76,31 +76,38 @@ def load_done(path: Path) -> set[tuple[str, str]]:
     return done
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--pairs", type=Path, default=ROOT / "data" / "pairs.jsonl")
-    ap.add_argument("--out", type=Path, default=None)
-    ap.add_argument("--temperature", type=float, default=0.0)
-    ap.add_argument("--limit", type=int, default=None, help="cap number of judge calls (smoke test)")
-    ap.add_argument("--workers", type=int, default=12, help="concurrent judge calls")
-    args = ap.parse_args()
+def run_judge(
+    spec: ModelSpec,
+    pairs: Path,
+    out: Path,
+    *,
+    temperature: float | None = 0.0,
+    max_tokens: int = 400,
+    token_param: str = "max_tokens",
+    extra_body: dict | None = None,
+    limit: int | None = None,
+    workers: int = 12,
+) -> tuple[int, int]:
+    """Judge every task in `pairs` with `spec`, appending verdicts to `out`.
 
-    spec = ModelSpec.from_env("JUDGE")
-    out = args.out or (ROOT / "outputs" / "judge_raw" / f"verdicts_{spec.model.replace('/', '_')}.jsonl")
+    Resumable: (pair_id, order) already present in `out` are skipped, so the same
+    call can be re-run to retry failures. Returns (n_judged, n_failed). This is the
+    shared entry point used by both main() (env-driven, single judge) and
+    run_compare.py (registry-driven, many judges over the same pairs).
+    """
     out.parent.mkdir(parents=True, exist_ok=True)
-
-    tasks = [json.loads(l) for l in args.pairs.read_text().splitlines() if l.strip()]
+    tasks = [json.loads(l) for l in pairs.read_text().splitlines() if l.strip()]
     done = load_done(out)
     todo = [t for t in tasks if (t["pair_id"], t["order"]) not in done]
-    if args.limit:
-        todo = todo[: args.limit]
-    print(f"{len(tasks)} tasks, {len(done)} already done, running {len(todo)}", file=sys.stderr)
+    if limit:
+        todo = todo[:limit]
+    print(f"[{spec.model}] {len(tasks)} tasks, {len(done)} already done, running {len(todo)}", file=sys.stderr)
 
     lock = threading.Lock()
     done_n = [0]
     fail_n = [0]
 
-    def judge_one(t):
+    def judge_one(t, fh):
         prompt = JUDGE_TEMPLATE.format(
             question=t["question"], answer_first=t["answer_first"], answer_second=t["answer_second"]
         )
@@ -108,8 +115,10 @@ def main():
             raw = chat(
                 spec,
                 [{"role": "system", "content": JUDGE_SYSTEM}, {"role": "user", "content": prompt}],
-                temperature=args.temperature,
-                max_tokens=400,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                token_param=token_param,
+                extra_body=extra_body,
             )
         except Exception as e:  # noqa: BLE001 — leave this task unwritten so a rerun retries it
             with lock:
@@ -128,10 +137,25 @@ def main():
                 print(f"  [{done_n[0]}/{len(todo)}] judged", file=sys.stderr)
 
     with out.open("a") as fh:
-        with ThreadPoolExecutor(max_workers=args.workers) as ex:
-            list(ex.map(judge_one, todo))
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            list(ex.map(lambda t: judge_one(t, fh), todo))
 
     print(f"done -> {out}  ({done_n[0]} judged, {fail_n[0]} failed; rerun to retry failures)")
+    return done_n[0], fail_n[0]
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--pairs", type=Path, default=ROOT / "data" / "pairs.jsonl")
+    ap.add_argument("--out", type=Path, default=None)
+    ap.add_argument("--temperature", type=float, default=0.0)
+    ap.add_argument("--limit", type=int, default=None, help="cap number of judge calls (smoke test)")
+    ap.add_argument("--workers", type=int, default=12, help="concurrent judge calls")
+    args = ap.parse_args()
+
+    spec = ModelSpec.from_env("JUDGE")
+    out = args.out or (ROOT / "outputs" / "judge_raw" / f"verdicts_{spec.model.replace('/', '_')}.jsonl")
+    run_judge(spec, args.pairs, out, temperature=args.temperature, limit=args.limit, workers=args.workers)
 
 
 if __name__ == "__main__":

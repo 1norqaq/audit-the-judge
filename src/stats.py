@@ -85,7 +85,12 @@ def fdr_table(tests: list[dict], alpha: float = 0.05) -> pd.DataFrame:
     """
     rows = []
     for t in tests:
-        res = binomtest(int(t["k"]), int(t["n"]), t.get("p_null", 0.5), alternative="two-sided")
+        n = int(t["n"])
+        if n < 1:
+            # no decisive verdicts in this group (e.g. every verdict was unparsed) ->
+            # not testable; skip rather than crash binomtest with n=0.
+            continue
+        res = binomtest(int(t["k"]), n, t.get("p_null", 0.5), alternative="two-sided")
         rows.append(
             {
                 "label": t["label"],

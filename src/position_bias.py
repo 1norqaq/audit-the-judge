@@ -16,7 +16,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from stats import bootstrap_ci_over_pairs, bootstrap_ci_rows
+from stats import bootstrap_ci_rows
 
 
 def build_pair_table(verdicts: pd.DataFrame) -> pd.DataFrame:

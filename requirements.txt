@@ -4,4 +4,4 @@ scipy>=1.10
 matplotlib>=3.7
 statsmodels>=0.14
 openai>=1.30
-tqdm>=4.66
+tabulate>=0.9
