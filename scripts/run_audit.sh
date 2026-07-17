@@ -10,7 +10,7 @@ set -euo pipefail
 PROJ_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$PROJ_DIR"
 
-N="${N:-}"
+N="${N:-40}"
 NARG=(); [ -n "$N" ] && NARG=(--n "$N")
 MODEL="${OC_JUDGE_MODEL:-judge}"
 
@@ -58,4 +58,4 @@ python src/report.py "$DUMP" --model "$MODEL"
 echo
 echo "==> DONE."
 echo "    report : outputs/judge_trust_report.md"
-echo "    figures: outputs/figures/{negative_control,position_bias}.png"
+echo "    figures: outputs/figures/{negative_control,position_bias,verbosity_bias}.png"

@@ -1,6 +1,6 @@
 # Judge Trustworthiness Report
 
-**Judge model:** `DeepSeek-V4-Flash (deepseek-chat endpoint), 1002 pairs`  |  **Bootstrap draws:** 2000  |  **Pairs:** 1002
+**Judge model:** `DeepSeek V4 (deepseek-chat endpoint), 1002 pairs`  |  **Bootstrap draws:** 2000  |  **Pairs:** 1002
 
 Auditing the LLM-as-judge with paired synthetic controls — the
 *"audit the auditor"* method, ported from fairness audits to LLM evaluation.

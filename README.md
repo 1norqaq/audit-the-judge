@@ -26,46 +26,49 @@ calibration — here pointed at a judge instead of a hiring audit.
 > bootstrap CIs and FDR correction. A judge "passes" only if it stays calibrated on the
 > nulls *and* surfaces the planted biases.
 
-## Results on a real judge — DeepSeek-V4-Flash
+## Results — five LLM judges, head-to-head
 
-Audit of **DeepSeek-V4-Flash as a pairwise judge** (served via the `deepseek-chat`
-endpoint) over **1,002 pairs** (334 questions × 3
-pair types × both orders = 2,004 judge calls). Full record:
-[`docs/real/judge_trust_report.md`](docs/real/judge_trust_report.md);
-reproduce from committed verdicts with
-`python src/report.py docs/real/verdicts.jsonl --outdir docs/real`.
+The headline result: **GPT-5.6 Luna, Claude Sonnet 5, Gemini 3.5 Flash, Kimi K2.6, and
+DeepSeek V4** audited as pairwise judges over the *same* comparison set, with each one's
+calibration record stacked side by side — negative control (does it invent preferences?),
+position + length bias (does it recover known biases?), quality discrimination, and
+BH-FDR significance. Because every judge scores identical pairs, each difference is the
+judge's, not the data's.
 
-<p align="center">
-  <img src="docs/real/figures/position_bias.png" width="48%">
-  <img src="docs/real/figures/verbosity_bias.png" width="48%">
-</p>
+All five judges scored the **same 500-question comparison set** — 500 × 3 pair types × 2
+orders = **3,000 judge calls each**, 15,000 total. Questions were written by a neutral
+third party (Claude Opus 4.8); answer pairs by a fixed generator (DeepSeek V4). Full record
++ per-task tables: [`docs/judge_comparison.md`](docs/judge_comparison.md).
 
-| Metric | Value (95% CI) | Verdict |
-|---|---|---|
-| Negative — spurious decisive rate | **0.150** [0.117, 0.183] | ✅ ties most equivalent pairs |
-| Negative — content-side skew | **0.510** [0.396, 0.622] | ✅ no side preference (CI covers 0.5) |
-| Positive #1 — first-position rate | **0.550** [0.471, 0.629] | ✅ no primacy bias (CI covers 0.5) |
-| Positive #2 — prefers-longer rate | **0.940** [0.918, 0.958] | ⚠️ strong **length bias** — favors the longer/more-detailed answer |
-| Discrimination (sanity) | **0.987** [0.973, 0.997] | ✅ reliably picks the better answer |
-| BH-FDR significant | **5 / 15** tests | the length axis fires on all 5 tasks |
+<p align="center"><img src="docs/figures_compare/comparison.png" width="100%"></p>
 
-**Read it:** DeepSeek-V4-Flash is well-calibrated where it matters — it doesn't manufacture
-preferences on equivalent pairs (negative control), shows no position bias (CI covers
-0.5), and discriminates quality almost perfectly (0.987). The clear failure is **length
-bias**: shown a concise and a more-detailed answer to the same question — both asked to
-be correct and complete — it picks the longer one **94%** of the time, FDR-significant on
-all five task families. This is the textbook LLM-judge length bias; part of it may be a
-legitimate preference for thoroughness, but the magnitude (up to 100% on some tasks) is
-exactly the signal a leaderboard built on this judge would silently inherit.
+| Judge | Neg: spurious-decisive ↓ | Pos: first-position | Pos: prefers-longer | Discrimination ↑ | FDR-sig |
+|---|---|---|---|---|---|
+| `gpt-5.6-luna` | 0.41 | 0.59 ⚠️ primacy | **0.55** — least length bias | 0.96 | 6/15 |
+| `claude-sonnet-5` | 0.50 | 0.39 ⚠️ recency (strongest) | 0.78 ⚠️ | 0.98 | 8/15 |
+| `gemini-3.5-flash` | 0.46 | 0.45 ⚠️ recency | 0.88 ⚠️ | 0.99 | 5/15 |
+| `kimi-k2.6` | 0.25 ✅ | 0.64 ⚠️ primacy | 0.88 ⚠️ | 0.99 | 5/15 |
+| `deepseek-v4` | **0.13** ✅ ties most | 0.58 ⚠️ primacy | 0.96 ⚠️ most length bias | **1.00** | 5/15 |
 
-> ⚠️ **This number is a fix, not the first result.** The first version of the length probe
-> built the long answer as `concise + boilerplate filler`, which a competent judge correctly
-> rejects every time → a degenerate `0.000 [0.000, 0.000]` that BH-FDR then mislabeled
-> "significant." The audit's own machinery flagged it: a rate pinned *exactly* at 0 with a
-> *zero-width* CI yet called significant is a pipeline-artifact fingerprint, not a real
-> finding. See [Fix log](#fix-log-a-bug-the-audit-caught-on-itself).
+**Read it — three findings:**
 
-> *Prefer a no-API-key demo?* A synthetic judge with planted biases lives under
+1. **Length bias is universal but stratified.** Every judge prefers the longer of two
+   content-equivalent answers, but the magnitude ranges from mild (**Luna 0.55**) to near-
+   absolute (**DeepSeek 0.96**). This is exactly the bias a leaderboard built on the wrong
+   judge would silently inherit.
+2. **Position bias splits the field into two camps.** Luna, Kimi and DeepSeek favor the
+   **first**-shown answer (primacy); Sonnet 5 and Gemini favor the **second** (recency),
+   with Sonnet the most order-sensitive.
+3. **No judge is clean, and the strengths trade off.** The best negative-control performer
+   (DeepSeek — ties genuinely-equivalent pairs 87% of the time) is also the most length-
+   biased; the least length-biased (Luna) over-decides on equivalent pairs. All five
+   discriminate quality reliably (≥0.96), so the failures are *calibration*, not competence.
+
+Reproduce the table + figure from committed verdicts (no API key needed):
+`python src/compare_report.py docs/verdicts/verdicts_*.jsonl` — or run the whole pipeline
+end to end with `bash scripts/run_compare.sh`.
+
+> *No-API-key demo?* A synthetic judge with planted biases lives under
 > [`docs/sample/`](docs/sample/) — regenerate with `python scripts/make_sample.py`.
 
 ## The idea in one table
@@ -91,17 +94,22 @@ by swapping the perturbation.
 audit-the-judge/
   configs/    eval_judge_min.py        # learn the OpenCompass judge data-flow (smoke)
               eval_pairwise_audit.py   # run our pairs through the judge inside OpenCompass
-  data/       questions.jsonl          # ~40 seed questions across 5 task types
+              models.py                # judge registry for the multi-judge comparison
+  data/       questions.jsonl          # seed questions across 5 task types
+              make_questions.py        # (re)build the bank with the QUESTION_GENERATOR
               build_pairs.py           # -> pairs.jsonl  (null + strong/weak + verbose, both orders)
   src/        run_judge.py             # OpenAI-compatible pairwise judge (resumable)
+              run_compare.py           # build once -> judge with every model -> compare
+              registry.py              # load configs/models.py + .env (shared)
               parse_outputs.py         # OC results OR judge dump -> one tidy verdict table
               negative_control.py      # spurious-preference rate on equivalent pairs
               position_bias.py         # first-position + flip rate (primacy axis)
               verbosity_bias.py        # prefers-longer rate (length axis)
               stats.py                 # bootstrap CIs + BH-FDR
-              report.py                # figures + the one-page report
+              report.py                # figures + the one-page report (single judge)
+              compare_report.py        # stack N judges into one comparison + figure
   tests/      test_audit.py            # plants known biases, asserts the audit recovers them
-  scripts/    setup_env.sh  run_smoke.sh  run_audit.sh  make_sample.py
+  scripts/    setup_env.sh  run_smoke.sh  run_audit.sh  run_compare.sh  make_sample.py
   docs/sample/                         # committed synthetic example output
 ```
 
@@ -145,6 +153,57 @@ asserts the audit flags each (CI excludes 0.5, BH-FDR significant), then plants 
 calibrated judge and asserts it passes cleanly — the positive-control sanity check
 applied to the tooling itself.
 
+## Comparing multiple judges
+
+To audit several judges side by side — e.g. **GPT-5.6 Luna, Claude Sonnet 5, Gemini 3.5
+Flash, Kimi K2.6, DeepSeek V4** — each is scored on the **same** pairs so any difference is
+the judge's, not the data's.
+Every provider exposes an OpenAI-compatible endpoint, so the one `llm_client` drives all
+of them; only `(model, api_base, api_key)` change.
+
+Three roles are kept **separate** so nothing under audit authors its own test
+(`configs/models.py`):
+
+| role | what it does | default |
+|---|---|---|
+| `QUESTION_GENERATOR` | writes the seed question bank | Claude Opus 4.8 (neutral third party) |
+| `GENERATOR` | writes the A/B answer pairs (same for every judge) | DeepSeek V4 (`deepseek-chat`) |
+| `JUDGES` | the models being audited + compared | GPT-5.6 Luna, Claude Sonnet 5, Gemini 3.5 Flash, Kimi K2.6, DeepSeek V4 |
+
+```bash
+# 1. register models + edit IDs to what you can call (keys stay in .env)
+#    configs/models.py
+# 2. put one key per provider in .env (see .env.example), then source it
+cp .env.example .env && $EDITOR .env && source .env
+
+# 3. (optional) regenerate a balanced question bank with the neutral QUESTION_GENERATOR
+python data/make_questions.py --per-cat 100 --fresh   # -> 100 x 5 = 500 questions, all Opus
+
+# 4. build pairs once with the generator, judge them with every model, compare
+bash scripts/run_compare.sh                       # all judges that have a key set
+N=40 bash scripts/run_compare.sh                  # 40 questions (cheaper first pass)
+ONLY="gpt-5.6-luna kimi-k2.6" bash scripts/run_compare.sh   # a subset (names from configs/models.py)
+```
+
+| provider | `api_base` (in `configs/models.py`) | key env var |
+|---|---|---|
+| OpenAI (ChatGPT) | `https://api.openai.com/v1` | `OPENAI_API_KEY` |
+| Anthropic (Claude) | `https://api.anthropic.com/v1/` | `ANTHROPIC_API_KEY` |
+| Google (Gemini) | `https://generativelanguage.googleapis.com/v1beta/openai/` | `GEMINI_API_KEY` |
+| Moonshot (Kimi) | `https://api.moonshot.ai/v1` | `MOONSHOT_API_KEY` |
+| DeepSeek | `https://api.deepseek.com/v1` | `DEEPSEEK_API_KEY` |
+
+Outputs:
+- `outputs/judge_comparison.md` — one validation-record row per judge + a grouped-bar
+  figure (`outputs/figures_compare/comparison.png`).
+- `outputs/reports/<judge>/judge_trust_report.md` — the full single-judge report for each.
+
+Runs are **resumable** and **fair by construction**: pairs are generated once by the
+fixed `GENERATOR` (so no judge is scoring different content), each judge's verdicts are
+cached per `(pair_id, order)`, and a judge whose key is missing is skipped rather than
+aborting the run. Re-run to add a judge or retry failed calls. Full-set cost per judge is
+~`3 × 2 × N` judge calls (`N` = questions; the shipped bank has 500).
+
 ## The validation record
 
 `run_audit.sh` produces a seven-line record (the LLM-judge analogue of the paper's record):
@@ -180,7 +239,10 @@ exposed it — worth keeping as a worked example of why the controls are distrib
 - **The fix.** Generate two genuinely content-equivalent answers — a concise one and a
   detailed one (both asked to be correct and complete) — instead of `concise + filler`,
   and re-judge just the verbosity slice (~668 calls, thanks to the resumable runner). The
-  honest result flipped to **0.940**: a real, well-estimated length bias.
+  honest result flipped to **0.940**: a real, well-estimated length bias. (This is the
+  single-judge DeepSeek run on 334 questions in [`docs/real/`](docs/real/); the headline
+  multi-judge table above reports DeepSeek at 0.96 on the newer 500-question set — the same
+  bias, a different run.)
 - **Caveat that remains.** "Longer" and "more thorough" are correlated, so part of the
   0.940 is a legitimate preference for detail; the probe measures *prefers-longer*, not
   *prefers-fluff*. That nuance is the kind of thing a validation record should state
