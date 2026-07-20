@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "audit-the-judge: Auditing the LLM-as-Judge with Paired Synthetic Controls"
+abstract: >-
+  A framework that calibrates an LLM-as-judge before its verdicts are trusted, using
+  paired synthetic controls (a negative control on equivalent answers plus positive
+  controls that inject known position and length biases), bootstrap confidence
+  intervals, and Benjamini-Hochberg FDR correction.
+type: software
+authors:
+  - family-names: Chen
+    given-names: Haoran
+    affiliation: "École Polytechnique"
+repository-code: "https://github.com/1norqaq/audit-the-judge"
+url: "https://github.com/1norqaq/audit-the-judge"
+license: MIT
+version: "1.0.0"
+date-released: "2026-07-17"
+keywords:
+  - LLM-as-judge
+  - model evaluation
+  - calibration
+  - fairness audit
+  - bias detection
