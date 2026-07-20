@@ -2,6 +2,7 @@
 <p align="center"><em>Paired synthetic controls that calibrate the judge before you trust its verdicts.</em></p>
 
 <p align="center">
+  <a href="https://github.com/1norqaq/audit-the-judge/actions/workflows/ci.yml"><img src="https://github.com/1norqaq/audit-the-judge/actions/workflows/ci.yml/badge.svg" alt="tests"></a>
   <img src="https://img.shields.io/badge/python-3.10-blue.svg" alt="python 3.10">
   <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT">
   <img src="https://img.shields.io/badge/harness-OpenCompass-orange.svg" alt="OpenCompass">
